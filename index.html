@@ -8,9 +8,37 @@
   <meta name="theme-color" content="#05060A" />
   <link rel="manifest" href="manifest.json" />
   <link rel="apple-touch-icon" href="icon.svg" />
+  <link rel="stylesheet" href="styles.css" />
   <title>LIT DEX Tracker</title>
 </head>
 <body>
-<p>placeholder</p>
+<div id="app">
+  <div class="topbar">
+    <div class="brand">
+      <div class="logo">L</div>
+      <div>
+        <h1>LIT DEX Tracker</h1>
+        <p>Lighter · 1K → 1M</p>
+      </div>
+    </div>
+    <div class="chip" id="liveChip">LIVE</div>
+  </div>
+  <div class="screens">
+    <section class="screen active" id="s-home"></section>
+    <section class="screen" id="s-double"></section>
+    <section class="screen" id="s-cal"></section>
+    <section class="screen" id="s-stats"></section>
+    <section class="screen" id="s-more"></section>
+  </div>
+  <nav class="tabbar">
+    <button class="tab active" data-tab="home"><span class="dot"></span>Portfolio</button>
+    <button class="tab" data-tab="double"><span class="dot"></span>1K→1M</button>
+    <button class="tab" data-tab="cal"><span class="dot"></span>Calendar</button>
+    <button class="tab" data-tab="stats"><span class="dot"></span>Stats</button>
+    <button class="tab" data-tab="more"><span class="dot"></span>Setup</button>
+  </nav>
+</div>
+<div class="sheet" id="sheet"><div class="panel"><div class="grab"></div><div id="sheetBody"></div></div></div>
+<script src="app.js"></script>
 </body>
 </html>
