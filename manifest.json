@@ -1,0 +1,13 @@
+{
+  "name": "LIT DEX Tracker",
+  "short_name": "LIT DEX",
+  "description": "Lighter DEX portfolio, PnL calendar, and 1K to 1M doubling tracker",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#05060A",
+  "theme_color": "#05060A",
+  "orientation": "portrait",
+  "icons": [
+    { "src": "icon.svg", "sizes": "512x512", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}
