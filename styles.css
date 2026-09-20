@@ -42,22 +42,37 @@ html, body { margin: 0; height: 100%; background: var(--bg); color: var(--text);
 .stat b { display: block; font-size: 16px; margin-top: 4px; }
 .card { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 14px; margin-top: 12px; }
 .card h3 { margin: 0 0 10px; font-size: 14px; font-weight: 650; }
-.pos { display: flex; justify-content: space-between; align-items: center; padding: 11px 0; border-bottom: 1px solid var(--line); }
+.pos { padding: 12px 0; border-bottom: 1px solid var(--line); }
 .pos:last-child { border-bottom: 0; }
+.pos-top { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+.liq { margin-top: 10px; }
+.liqmeta { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; margin-bottom: 6px; }
+.liqmeta .lp { font-size: 11px; color: var(--muted); }
+.liqpct { font-size: 12px; font-weight: 700; font-variant-numeric: tabular-nums; }
+.liqpct.ok { color: var(--lime); }
+.liqpct.warn { color: var(--orange); }
+.liqpct.danger { color: var(--red); }
+.liqbar { position: relative; height: 18px; display: flex; align-items: center; }
+.liqbar input[type=range] { -webkit-appearance: none; appearance: none; width: 100%; height: 18px; margin: 0; background: transparent; padding: 0; border: 0; position: relative; z-index: 2; }
+.liqbar input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 16px; height: 16px; border-radius: 50%; background: #fff; border: 2px solid #0b0d14; box-shadow: 0 0 0 1px rgba(255,255,255,.25); cursor: grab; }
+.liqbar input[type=range]::-moz-range-thumb { width: 16px; height: 16px; border-radius: 50%; background: #fff; border: 2px solid #0b0d14; cursor: grab; }
+.liqtrack { position: absolute; left: 0; right: 0; height: 8px; border-radius: 99px; background: #1c2030; overflow: hidden; z-index: 1; pointer-events: none; }
+.liqfill { height: 100%; width: 0; border-radius: 99px; }
+.liqfill.ok { background: linear-gradient(90deg, #5a7a20, var(--lime)); }
+.liqfill.warn { background: linear-gradient(90deg, #7a4a10, var(--orange)); }
+.liqfill.danger { background: linear-gradient(90deg, #5a1020, var(--red)); }
+.liqhint { display: flex; justify-content: space-between; margin-top: 4px; font-size: 10px; color: var(--muted); }
 .tag { font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 6px; }
 .tag.long { background: rgba(200,245,66,.14); color: var(--lime); }
 .tag.short { background: rgba(255,91,115,.14); color: var(--red); }
 .tabbar { position: fixed; left: 12px; right: 12px; bottom: calc(10px + var(--safe-b));
   background: rgba(18,20,28,.86); backdrop-filter: blur(18px); border: 1px solid var(--line);
   border-radius: 22px; display: grid; grid-template-columns: repeat(5,1fr); padding: 6px; z-index: 20; }
-.tab { border: 0; background: transparent; color: var(--muted); padding: 8px 0 6px; font-size: 10px;
-  display: flex; flex-direction: column; align-items: center; gap: 3px; }
+.tab { border: 0; background: transparent; color: var(--muted); padding: 8px 0 6px; font-size: 10px; display: flex; flex-direction: column; align-items: center; gap: 3px; }
 .tab.active { color: var(--text); }
 .tab.active .dot { background: var(--lime); }
 .dot { width: 22px; height: 3px; border-radius: 99px; background: transparent; }
-input, select, textarea, button.btn {
-  font: inherit; color: var(--text); background: var(--card2); border: 1px solid var(--line);
-  border-radius: 12px; padding: 11px 12px; width: 100%; }
+input, select, textarea, button.btn { font: inherit; color: var(--text); background: var(--card2); border: 1px solid var(--line); border-radius: 12px; padding: 11px 12px; width: 100%; }
 textarea { min-height: 72px; resize: vertical; }
 .btn { cursor: pointer; font-weight: 650; }
 .btn.primary { background: var(--lime); color: #08120a; border: 0; }
@@ -100,8 +115,7 @@ h2.sec { font-size: 18px; margin: 6px 0 12px; }
   body { overflow: auto; }
   #app { flex-direction: row; height: 100vh; }
   .topbar { position: fixed; top: 0; left: 232px; right: 0; z-index: 10; background: linear-gradient(var(--bg), transparent); }
-  .tabbar { position: fixed; left: 16px; top: 16px; bottom: 16px; right: auto; width: 200px;
-    grid-template-columns: 1fr; align-content: start; border-radius: 24px; padding: 10px; gap: 4px; }
+  .tabbar { position: fixed; left: 16px; top: 16px; bottom: 16px; right: auto; width: 200px; grid-template-columns: 1fr; align-content: start; border-radius: 24px; padding: 10px; gap: 4px; }
   .tab { flex-direction: row; justify-content: flex-start; gap: 10px; padding: 12px 12px; font-size: 13px; }
   .tab .dot { width: 8px; height: 8px; }
   .screens { margin-left: 232px; margin-top: 52px; }
